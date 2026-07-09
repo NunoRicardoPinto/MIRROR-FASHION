@@ -1,0 +1,354 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #333333;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial,
+    sans-serif;
+  background-image: url(../img/body-background.png);
+}
+
+header {
+  position: relative;
+  /*O position 'fixed' faz com que o elemento mantenha a sua posição em relação a área total da página, isso, mesmo quando ha rolagem de tela./// Mas nesse momento ele esta a quebrar o layout que construi e preciso saber porquê ?? !!!!R: Isso o porque no posicionamento fixo é
+  obrigatório definir a configuração de posicionamento Vertinal(left e right) e Orizontal(top e bottom).*/
+  /*Com o left e right zerados o containner se posiciona no centro que é o estilo definido para ele, quando essas coordenadas não são preenchidas o navegador vai atribuir valores padrões que podem quebrar o nosso LAYOUT; e zerando eles só fica o efeito e fixo onde há rolagem mas com o cabeçalo fixo.cabeçalho */
+}
+
+.container {
+  margin: 0 auto;
+  width: 940px;
+}
+
+.sacola {
+  background-image: url(../img/sacola.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+
+  font-size: 14px;
+  padding-right: 35px;
+  text-align: right;
+  width: 140px;
+
+  position: absolute; /*Para ter como refência o seu elemento pai, no caso a box do <header> */
+  padding-top: 8px;
+  right: 0px;
+  top: 0px;
+}
+
+.menu-opcoes {
+  position: absolute; /*Quando se usa a propriedade position, o naveador já atribui por padrão o valor "0" para left.*/
+  right: 0px;
+  bottom: 0px;
+}
+
+.menu-opcoes a {
+  color: #003366; /*################# cor dos links ###########*/
+}
+
+.menu-opcoes ul li {
+  font-size: 15px;
+  display: inline;
+  margin-left: 20px;
+}
+
+/*O hover funcona me elementos espacíficos e não em grupo de elementos, pelo o que eu vi hoje*/
+.menu-opcoes a:hover {
+  color: #007DC6;
+}
+
+.menu-opcoes a:active {
+  color:#007DC6 ; /*Com o hover o link vai mudar de cor quando o mause passar por ele, mas com pseudo-elemento de estado "active", ele vai manter a cor declarada nele quando o elemento for clicado...*/
+}
+/* 
+#
+#
+#
+#
+#
+#
+#
+ */
+
+/*#######################   Testando e dominando a propriedade position  ##########################*/
+/* 
+Regras aplicadas quando o elemento não tem nenhum elemento pai ou quando o elemento pai tem o posicionamento Static
+.quadrado{
+    background-color: green;
+    width: 300px;
+    height: 200px;
+}
+
+.absoluto{
+    background-color: blue;
+    position: absolute;
+    left: 50px;
+    top: 70px;
+   
+} */
+/* #####################     Vendo como funciona com a hierarquia correspondente  ############################## */
+/* 
+.quadrado{
+    position: relative;
+    border: 2px solid black;
+    background-color: green;
+    width: 300px;
+    height: 200px;
+
+}
+#quadrado{
+    border: 2px solid rgb(29, 37, 184);
+    background-color: red;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+}
+ */
+/*#################################*/
+
+.busca,
+.menu-departamentos {
+  background-color: #dcdcdc;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  margin-right: 10px;
+  width: 230px;
+}
+
+.busca h2,
+.busca form,
+.menu-departamentos h2 {
+  margin: 10px;
+}
+
+.menu-departamentos li {
+  background-color: white;
+  margin-bottom: 1px;
+  padding: 5px 10px;
+  list-style: none;
+}
+
+.menu-departamentos a {
+  color: #333333;
+  text-decoration: none;
+}
+
+.busca input[type="search"] {
+  /*Selecionou-se o input por meio do valor do seu atributo Type /// Assim essa propriedade vai ser aplicada em todos os inpus que são de tipo "Search" ou seja pesquisa.*/
+  width: 150px;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+/*
+#
+#
+#
+#
+#
+# 
+*/
+
+
+/* ### Mexendo no botão e pesquisa ###*/
+.busca form button {
+  text-indent: -9999px;/*Imagem replecement*/
+
+
+  /*Adição da imagem */
+  background-image: url(../img/busca.png);
+  background-repeat: no-repeat;
+  border: none;
+
+  /*Tamanho da imagem*/
+  width: 20px;
+  height: 20px;
+}
+
+/* 
+#
+#
+#
+#
+# 
+*/
+.busca,
+.menu-departamentos {
+  float: left;
+}
+.menu-departamentos {
+  clear: left;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+.menu-departamentos li ul {
+  display: none; /*Para poder aplicar em todas pois vai ser necessário*/
+}
+.menu-departamentos li:hover ul { 
+  display: block; 
+}
+
+.menu-departamentos ul ul li {
+  background-color: #dcdcdc;
+}
+
+.menu-departamentos ul ul li a::before {
+  content: '-';
+  /* padding-right: 30px; Esse espaço pertence ao conteúdo adicionado*/
+  /* content: '\272A'; Simbolo da converse; circo com fundo de estrelinha branca*/ 
+}
+
+
+.painel h2::before {
+  content: '\2756';  /*Símbolo de diamante antes do título dos paineis.*/
+  padding-right: 30px;
+  opacity: 0.4;
+}
+
+.painel h2{
+  /* O terceiro valor determina sempre o grau de espalhamento da sombra  e se tiver um quarto valor, ele vai determinar o tamanho da sombra e por último como último valor suportado será sempre a cor que neste caso caso foi definida com opacidade ou seja transparência.*/
+  text-shadow: 3px 3px 2px rgba(255, 255 ,255 , 0.8);
+}
+
+
+/* 
+#
+#
+#
+#
+#
+
+*/
+
+.destaque {
+  margin-top: 10px;
+}
+
+/* ######  Paineis de produtos ###### */
+
+.painel {
+  margin: 10px 0px;
+  padding: 10px;
+  width: 465px;
+  box-shadow: inset 1px 1px 5px #999; /*Vai usar-se o inset para dar uma borda interna a caixa do elemento.*/
+
+  /* ^Vamos configurar as bordas de forma específica. É possível também declarar tamanhos espacíficos se quisermos.*/
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.novidades {
+  float: left;
+
+}
+
+.mais-vendidos {
+  float: right;
+}
+/* 
+Com GRID
+.painel ol{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+  /* Testando GRID
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px; parte da li
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+} */
+.painel ol li {
+  display: inline-block; /*Esta solução faz com que tenha duas colunas de imagens com três linhas mas eu quero que seja três colunas com duas imagens cada e pesquisando vi que o melhor é usando o css grid e vou aplicar isso mais abaixo. // Chegou no ponto, mas quebrou o layout, então nesse contexto não é a solução mais viável*/
+  vertical-align:top;
+  width: 139px; /*A solução para o problema que escrevi no inline-block, olha que fantástico!!  solucionou-se ajustando o tamanho de modos que permitiu que outros elementos se posicionem ao lado muito bom!!! E também o da imagem que esta mais abaixo que ocupa 100% do espaço do seu elemento pai. */
+
+  margin: 2px;
+  padding-bottom: 10px;
+}
+
+.painel ol li figure img {
+  width: 100%;
+}
+
+.painel h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  margin-bottom: 10px;
+}
+
+.painel a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+}
+
+.novidades {
+  background-color: #f5dcdc;
+
+  /* É importante realçar que ao declarar o efeito ou valor "gradient" ele deve ser declarado no propriedade    *** background ***    simples e não backgroundo-color pois mata o efeito do gradient. */
+  background: linear-gradient(#F5DCDC, #BEBEF4); 
+}
+
+.mais-vendidos {
+  background-color: #dcdcf5;
+  background: linear-gradient(#DCDCf5, #F4BEBE);
+}
+/* ######  Fim de paineis de produtos ###### */
+
+/*################ Estilizando O Footer  ############### */
+
+footer {
+  background-image: url(../img/fundo-rodape.png);
+  /* ^Resolvendo o problema do footer por conta da flutuação dos paineis de destaques, Que faz ele se posicinar até ao painel de navegação com o banner de destaques. */
+  clear: both; /*Vai limpar o fluxo de documento no lado direito e esquerdo simultâneamente, e os únicos elemento que obedecem a essa propriedade são os que estão flutuando, e como os paineis estavam flutuando na esquerda e na direita ele limpou esse fluxo posicionando-se mais baixo de ambos. */
+  padding: 20px 0;
+}
+
+.social a {
+  height: 32px;
+  width: 32px;
+  display: block; /*Para que o height e o width sejam aceites*/
+
+  text-indent: -9999px; /*Faz com que o texto desapareça ou seja fica subtendido*/
+}
+
+.social a[href*="facebook.com"] {
+  background-image: url(../img/facebook.png);
+}
+
+.social a[href*="twitter.com"] {
+  background-image: url(../img/twitter.png);
+}
+
+.social a[href*="google.com"] {
+  background-image: url(../img/googleplus.png);
+}
+
+footer .container {
+  position: relative; /*Não quebra nada porque nenhum elemento tem o position fixed.*/
+  border: 2px solid red;
+}
+.social {
+  position: absolute;
+  right: 0;
+  top: 12px; /*E a ideia para isso é vertical-middle que também não deu certo :( //----Devo procurar uma forma mais elegante de posicionar os linkes// e tirar essa "desilegância do top:12px; ##################################################################################################################################################################################################################################"*/
+}
+
+/* #########  POSICIOANAMENTO  OS LINKES  ########## */
+footer ul li{
+  float: left; /*Aplicando o float left no li, faz com que cada li se posicione um ao lado de outro*/
+  margin-left: 25px;
+  list-style: none;
+}
+
+
