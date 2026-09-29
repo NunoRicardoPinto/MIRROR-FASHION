@@ -1,53 +1,98 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    color: #333333;
-    font-family:'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
-    margin: 0 auto;
-    width: 940px;
+body {
+  color: #333333;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  margin: 0 auto;
+  width: 940px;
 }
-header{
+header {
+  position: relative;
 
-    position: relative;
+  .sacola {
+    background-image: url(../img/sacola.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    width: 180px;
 
-    .sacola{
-        background-image: url(../img/sacola.png);
-        background-repeat: no-repeat;
-        background-position: top right;
-        width: 180px;
+    font-size: 14px;
+    text-align: right;
+    padding-right: 35px;
 
-        font-size: 14px;
-        text-align: right;
-        padding-right: 35px;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+  }
 
-        position: absolute;
-        top: 8px;
-        right: 10px;
+  .menu-opcoes {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+  }
+
+  .menu-opcoes ul {
+    font-size: 15px;
+    li {
+      display: inline;
+      margin-left: 12px;
     }
-
-    .menu-opcoes{
-        position: absolute;
-        right: 10px;
-        bottom: 0;
-    }
-
-    .menu-opcoes ul{
-        font-size: 15px;
-        li{
-            display: inline;
-            margin-left: 12px;
-        }
-    }
-    .menu-opcoes a{
-        color: #003366;
-    }
-
+  }
+  .menu-opcoes a {
+    color: #003366;
+  }
 }
 
-.container{
-    width: 940px;
-    margin: 0 auto;
+.container {
+  width: 940px;
+  margin: 0 auto;
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%% fim header %%%%%%%%%%%%%%%%%% */
+
+.busca,
+.menu-categorias {
+  background-color: #dcdcdc;
+  width: 230px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  margin-right: 10px;
+  margin-top: 10px;
+  
+  nav ul li {
+    list-style: none;
+    margin-bottom: 1px;
+    padding: 5px 10px;
+    background-color: white;
+    a {
+      text-decoration: none;
+      color: #333333;
+      margin-left: 10px;
+    }
+  }
+}
+
+.busca h2,
+.busca form,
+.menu-categorias h2{
+    margin: 10px;
+}
+
+.busca input[type=search]{
+    width: 170px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+
+}
+
+.busca button{
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    background-color: transparent;
+
 }
